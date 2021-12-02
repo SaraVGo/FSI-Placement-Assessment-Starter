@@ -9,38 +9,36 @@ let yourName = "Sara V Gomez" // HINT: Replace this with your own name!
 let gb = 0      // Gingerbread
 let cc = 0      // Chocolate Chip
 let sugar = 0   // Sugar Sprinkle
+let total = 0
 
 
 // Code to update name display 
 document.getElementById('credit').textContent = `Created by ${yourName}`
 
-let ButtonUp = document.getElementById("quantity-up");
-let ButtonDown = document.getElementById("quantity-down");
+let gbButtonUp = document.getElementById("add-gb");
+let gbButtonDown = document.getElementById("minus-gb");
+
+let ccButtonUp = document.getElementById("add-cc");
+let ccButtonDown = document.getElementById("minus-cc");
+
+let sugarButtonUp = document.getElementById("add-sugar");
+let sugarButtonDown = document.getElementById("minus-sugar");
 
 
-//Isolating the votes on table*//
-let gbVotesCell = document.querySelector("#Gingerbread-votes");
 
+//Isolating the votes on table*// 
+let gbVotes= document.querySelector("#qty-gb");
+let ccVotes= document.querySelector("#qty-cc");
+let sugarVotes= document.querySelector("#qty-sugar");
+let TotalVotes= document.querySelector("#qty-total");
 
 // Event listener for clicks on the "+" button for Gingerbread cookies
-document.getElementById('add-gb').addEventListener('click', function(e) 
-
-{gbVoteBtn.addEventListener('click',function(e) {
-    let gbVotesCount = parseInt(gbVotesCell.textContent);
-    gbVotesCount = gbVotesCount + 1;
-    gbVotesCell.textContent = gbVotesCount;
-});
 
 
-    ButtonUp.addEventListener('click', function(e) {
-    gb = gb + 1;
+gbVotes.addEventListener('click', function(e) {
+     gb = gb + 1;
+     gbVotes.textContent = gb;
+    console.log ('Gingerbread + button was clicked!')
+    localStorage.setItem('gb-votes', gb);
 
-})
-    // HINT: You can delete this console.log after you no longer need it!
-   
-    console.log('Gingerbread + button was clicked!')
-
-    // TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
-
-
-// TODO: Hook up event listeners for the rest of the buttons
+ total = gb 
